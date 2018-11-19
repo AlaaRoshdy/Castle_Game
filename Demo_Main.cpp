@@ -3,7 +3,6 @@
 
 int main()
 {
-	//Testing bit bucket
 	Battle* pGameBattle = new Battle;
 	pGameBattle->RunSimulation();
 	
