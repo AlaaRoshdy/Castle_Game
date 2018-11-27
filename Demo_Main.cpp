@@ -6,7 +6,7 @@ int main()
 	Battle* pGameBattle = new Battle;
 	pGameBattle->RunSimulation();
 	//This is alaa's first commit 
-	// DS is cool
+	// DS is both cool and not cool
 	delete pGameBattle;
 	
 	return 0;
