@@ -7,6 +7,8 @@
 //You can choose whatever colors you like for your enemies
 const color FIGHTER_CLR = DARKBLUE;
 const color HEALER_CLR = ORANGERED;
+const color FREEZER_CLR = AZURE;
+const color FROZEN_CLR = SNOW; //to be used when the enemy gets frozen.
 
 
 // Enemy is the base class of each type of enemy
@@ -25,7 +27,7 @@ protected:
 	double Power;	//Enemy power
 	int RLD;		//reload period in unit steps
 	//hatem60010
-	ENEMY type; //new type defined at defs.h
+	//ENEMY type; //new type defined at defs.h
 	State state;//new type
 	//TODO: Enemy Action Step -> dunno what to do 
 	//
@@ -40,18 +42,18 @@ public:
 	REGION GetRegion() const;
 
 	void DecrementDist();
-	void setType(ENEMY);
+	//void setType(ENEMY);
 	void SetDistance(int d);
 	int GetDistance() const;
-	ENEMY getType();
+	//ENEMY getType();
 	State getState();
 	void setState(State s);
 	void updateState();
-	void hit();
+	//void hit();
 	// Virtual Functions: ----------------
 
-	//virtual void Move() = 0;	//All enemies can move
-	//virtual void Act() = 0;	//Acting means fighting or healing
+	virtual void Move() = 0;	//All enemies can move
+	virtual void Act() = 0;	//Acting means fighting or healing
 
 	//
 	// TODO: Add More Member Functions As Needed

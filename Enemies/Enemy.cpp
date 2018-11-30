@@ -46,15 +46,15 @@ int Enemy::GetDistance() const
 	return Distance;
 }
 
-ENEMY Enemy::getType()
+/*ENEMY Enemy::getType()
 {
 	return type;
-}
+}*/
 
-void Enemy::setType(ENEMY T)
+/*void Enemy::setType(ENEMY T)
 {
 	type = T;
-}
+}*/
 
 void Enemy::setState(State s)
 {
@@ -74,10 +74,10 @@ void Enemy::updateState()
 		}
 }
 
-void Enemy::hit()
+/*void Enemy::hit()
 {
 	int k;
 	if (Health >= 0.5) k = 1;
 	else k = 0.5;
 	Health = Health * k / Distance;
-}
+}*/
