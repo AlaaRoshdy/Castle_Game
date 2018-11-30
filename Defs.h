@@ -20,7 +20,7 @@ enum REGION {
 enum ENEMY
 {
 	fighter,
-	healeer,
+	healer,
 	freezer
 };
 
