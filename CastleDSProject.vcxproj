@@ -270,6 +270,8 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="Containers\LinkedList.cpp" />
+    <ClCompile Include="Containers\LLNode.cpp" />
     <ClCompile Include="Demo_Main.cpp" />
     <ClCompile Include="Enemies\Enemy.cpp" />
     <ClCompile Include="GUI\GUI.cpp" />
@@ -298,6 +300,10 @@
     <ClInclude Include="CMUgraphicsLib\jpeg\jpegint.h" />
     <ClInclude Include="CMUgraphicsLib\jpeg\jpeglib.h" />
     <ClInclude Include="CMUgraphicsLib\jpeg\jversion.h" />
+    <ClInclude Include="Containers\LinkedList.h" />
+    <ClInclude Include="Containers\LLNode.h" />
+    <ClInclude Include="Containers\Node.h" />
+    <ClInclude Include="Containers\Queue.h" />
     <ClInclude Include="Defs.h" />
     <ClInclude Include="Enemies\Enemy.h" />
     <ClInclude Include="GUI\GUI.h" />
