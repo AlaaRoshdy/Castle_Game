@@ -30,4 +30,5 @@ void Tower::SetPower(double P)
 
 void Tower::Attack()
 {
+
 }
