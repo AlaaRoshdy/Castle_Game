@@ -1,7 +1,7 @@
 #include "Enemy.h"
 
 
-Enemy::Enemy(color r_c, REGION r_region, int S, double H, int AT, double P, int RL, int d)
+Enemy::Enemy(color r_c, REGION r_region, int S, double H, int AT, double P, int RL, int distance)
 {
 	Clr = r_c;
 	Region = r_region;

@@ -4,7 +4,7 @@ class Healer :
 	public Enemy
 {
 public:
-	Healer(REGION r_region, int S, double H, int AT, double P, int RL, int d);
+	Healer(REGION r_region, int ID, double Health, int ArrivalTime, double Power, int RLD);
 	virtual void Move() {}
 	virtual void Act() {}
 	 ~Healer();

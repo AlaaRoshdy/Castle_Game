@@ -1,6 +1,9 @@
 #pragma once
 
 #include "Enemies\Enemy.h"
+#include "Enemies/Fighter.h"
+#include "Enemies/Freezer.h"
+#include "Enemies/Healer.h"
 #include "Castle\Castle.h"
 #include <fstream>
 #include "Containers/LinkedList.h"

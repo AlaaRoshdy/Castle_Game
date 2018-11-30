@@ -35,7 +35,7 @@ protected:
 	//
 
 public:
-	Enemy(color r_c, REGION r_region, int ID, double Health, int ArrivalTime, double Power, int RLD, int d = MaxDistance);
+	Enemy(color r_c, REGION r_region, int ID, double Health, int ArrivalTime, double Power, int RLD, int distance = MaxDistance);
 	virtual ~Enemy();
 
 	color GetColor() const;

@@ -69,13 +69,13 @@ void Battle::LoadInput()
 		Enemy * NewEnemy;
 		switch (TYP) {
 		case fighter:
-			// NewEnemy= new Fighter(//constructor inputs)
+			NewEnemy = new Fighter(REG, SeqNum, EnemyHealth, ArrivalTime, EnemyPower,RLD);
 			break;
 		case healer:
-			// NewEnemy= new healer(//constructor inputs)
+			 NewEnemy= new Healer(REG, SeqNum, EnemyHealth, ArrivalTime, EnemyPower, RLD);
 			break;
 		case freezer:
-			// NewEnemy= new freezer(//constructor inputs)
+			 NewEnemy= new Freezer(REG, SeqNum, EnemyHealth, ArrivalTime, EnemyPower, RLD);
 			break;
 		}
 		//Next I will enqueue to inactive enemies Queue.

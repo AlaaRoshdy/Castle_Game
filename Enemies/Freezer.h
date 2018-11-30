@@ -4,7 +4,7 @@ class Freezer :
 	public Enemy
 {
 public:
-	Freezer(REGION r_region, int S, double H, int AT, double P, int RL, int d);
+	Freezer(REGION r_region, int ID, double Health, int ArrivalTime, double Power, int RLD);
 	virtual void Move() {}
 	virtual void Act() {}
 	~Freezer();
