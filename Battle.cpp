@@ -40,6 +40,7 @@ void Battle::LoadInput()
 	LoadFile.open("input.txt");
 	double TH; LoadFile >> TH; int N; LoadFile >> N; double TP; LoadFile >> TP;
 	// InitializeTowers()
+	Enemy * NewEnemy;
 	while (1) {
 		int SeqNum;  LoadFile >> SeqNum;
 		if (SeqNum == -1)
@@ -66,7 +67,6 @@ void Battle::LoadInput()
 			REG = D_REG;
 			break;
 		}
-		Enemy * NewEnemy;
 		switch (TYP) {
 		case fighter:
 			NewEnemy = new Fighter(REG, SeqNum, EnemyHealth, ArrivalTime, EnemyPower,RLD);
@@ -78,16 +78,16 @@ void Battle::LoadInput()
 			 NewEnemy= new Freezer(REG, SeqNum, EnemyHealth, ArrivalTime, EnemyPower, RLD);
 			break;
 		}
-		//Next I will enqueue to inactive enemies Queue.
-
-
+		InactiveList.enqueue(NewEnemy);
 	}
+	delete NewEnemy;
+	return;
 }
 
 
 //This is just a demo function for project introductory phase
 //It should be removed in phases 1&2
-void Battle::Just_A_Demo()
+/*void Battle::Just_A_Demo()
 {
 	
 	std::cout<<"\nWelcome to Castle Battle:\n";
@@ -167,4 +167,4 @@ void Battle::Just_A_Demo()
 	}
 
 	delete pGUI;
-}
+}*/

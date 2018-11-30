@@ -3,22 +3,22 @@
 #ifndef NULL
 #define NULL 0
 #endif
-#ifndef _NODE
-#define _NODE
+#ifndef _LLNode
+#define _LLNode
 
-//First let's declare a singele node in the list
-class Node
+//First let's declare a singele LLNode in the list
+class LLNode
 {
 private :
 	int item;	// A data item (can be any complex sturcture)
-	Node* next;	// Pointer to next node
+	LLNode* next;	// Pointer to next LLNode
 public :
-	Node();
-	Node( int newItem);
+	LLNode();
+	LLNode( int newItem);
 	void setItem(int  newItem);
-	void setNext(Node* nextNodePtr);
+	void setNext(LLNode* nextNodePtr);
 	int getItem() const ;
-	Node* getNext() const ;
-}; // end Node
+	LLNode* getNext() const ;
+}; // end LLNode
 
 #endif	
