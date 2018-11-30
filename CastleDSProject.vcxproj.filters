@@ -216,5 +216,7 @@
     <ClInclude Include="Enemies\Enemy.h">
       <Filter>Enemies</Filter>
     </ClInclude>
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="Queue.h" />
   </ItemGroup>
 </Project>
