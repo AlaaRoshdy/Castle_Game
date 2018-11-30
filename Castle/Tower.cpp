@@ -19,3 +19,11 @@ double Tower::GetHealth() const
 {
 	return Health;
 }
+void Tower::SetNoOfAttacks(int N)
+{
+	NoOfAttacks = N;
+}
+void Tower::SetPower(double P)
+{
+	Power = P;
+}
