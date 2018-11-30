@@ -2,7 +2,9 @@
 
 #include "Enemies\Enemy.h"
 #include "Castle\Castle.h"
-
+#include <fstream>
+#include "Containers/LinkedList.h"
+#include "Containers/Queue.h"
 // it is the controller of the project
 class Battle
 {
@@ -15,7 +17,7 @@ private:
 											// At every time step, you should update those pointers 
 											// to point to the current active enemies 
 											// then pass the pointers list to the GUI function
-
+	Queue<Enemy*> InactiveList;
 	//
 	// TODO: Add More Data Members As Needed
 	//
