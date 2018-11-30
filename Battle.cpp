@@ -41,6 +41,7 @@ void Battle::LoadInput()
 	double TH; LoadFile >> TH; int N; LoadFile >> N; double TP; LoadFile >> TP;
 	// InitializeTowers()
 	Enemy * NewEnemy;
+	BCastle.InitializeTowers(TH, N, TP);
 	while (1) {
 		int SeqNum;  LoadFile >> SeqNum;
 		if (SeqNum == -1)
