@@ -73,7 +73,7 @@ bool LinkedList::DeleteNode(Enemy* value)
 void LinkedList::MoveAll()
 {
 	LLNode *P = Head;
-	while (Head != NULL)
+	while (P != NULL)
 	{
 		P->getItem->Move();
 		P = P->getNext();
