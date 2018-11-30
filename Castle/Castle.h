@@ -18,7 +18,7 @@ public:
 
 	Castle();
 	void SetTowerHealth(REGION TowerRegion, double h);
-
+	void  InitializeTowers(int, int, int);
 	//
 	// TODO: Add More Member Functions As Needed
 	//
