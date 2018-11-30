@@ -50,9 +50,10 @@ public:
 	void setState(State s);
 	void updateState();
 	int getATime() const;
+	void Move();	//All enemies can move
 	// Virtual Functions: ----------------
 
-	virtual void Move() = 0;	//All enemies can move
+	
 	virtual void Act() = 0;	//Acting means fighting or healing
 
 	//
