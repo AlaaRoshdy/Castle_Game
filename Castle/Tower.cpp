@@ -27,3 +27,7 @@ void Tower::SetPower(double P)
 {
 	Power = P;
 }
+
+void Tower::Attack()
+{
+}

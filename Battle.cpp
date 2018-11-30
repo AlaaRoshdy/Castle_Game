@@ -24,14 +24,42 @@ Castle * Battle::GetCastle()
 	return &BCastle;
 }
 
-
-
-
-
-
 void Battle::RunSimulation()
 {
-	Just_A_Demo();
+	//Just_A_Demo();
+	LoadInput();
+	GUI * pGUI = new GUI;
+	pGUI->PrintMessage("This is phase 1. Click to move to next step");
+	// Drawing the battle
+
+	pGUI->DrawBattle(BEnemiesForDraw, EnemyCount);
+
+	Point p;
+	pGUI->GetPointClicked(p);
+	for (int TimeStep = 1; TimeStep <= 30; TimeStep++)
+	{
+		//move the old 
+		ActiveList.MoveAll();
+		//check the top of the inactive Queue if it's time dequeue and add to the enemies container.
+		Enemy * TestEnemy; InactiveList.peekFront(TestEnemy);
+		Enemy * NewEnemy;
+		while (TestEnemy->getATime()>=TimeStep)
+		{
+			InactiveList.dequeue(NewEnemy);//deQ the enemy
+			ActiveList.InsertBeg(NewEnemy);
+			//add to the cointaner array/linkedList
+			InactiveList.peekFront(TestEnemy); //peekFront again 
+		}
+		BCastle.AllAtack();
+		DisplayStats();
+		// Redraw the enemies
+		pGUI->DrawBattle(BEnemiesForDraw, EnemyCount);
+
+		pGUI->GetPointClicked(p);
+	}
+
+	delete pGUI;
+
 }
 
 void Battle::LoadInput()
@@ -83,6 +111,10 @@ void Battle::LoadInput()
 	}
 	delete NewEnemy;
 	return;
+}
+
+void Battle::DisplayStats()
+{
 }
 
 

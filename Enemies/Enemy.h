@@ -49,7 +49,7 @@ public:
 	State getState();
 	void setState(State s);
 	void updateState();
-	//void hit();
+	int getATime() const;
 	// Virtual Functions: ----------------
 
 	virtual void Move() = 0;	//All enemies can move

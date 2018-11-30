@@ -74,6 +74,11 @@ void Enemy::updateState()
 		}
 }
 
+int Enemy::getATime() const
+{
+	return ArrivalTime;
+}
+
 /*void Enemy::hit()
 {
 	int k;

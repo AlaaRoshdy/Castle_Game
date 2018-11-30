@@ -6,14 +6,14 @@ LLNode::LLNode( )
 	next= NULL;
 }  // end default constructor
 
-LLNode::LLNode( int newItem)
+LLNode::LLNode(Enemy* newItem)
 {
 	item = newItem;
 	next= NULL;
 
 }//end constructor
 
-void LLNode::setItem( int newItem)
+void LLNode::setItem(Enemy* newItem)
 {
 	item = newItem;
 } // end setItem
@@ -23,7 +23,7 @@ void LLNode::setNext(LLNode* nextNodePtr)
 next = nextNodePtr;
 } // end setNext
 
-int LLNode::getItem() const
+Enemy* LLNode::getItem() const
 {
 return item;
 } // end getItem

@@ -8,6 +8,8 @@ class Tower
 	//
 	// TODO: Add More Data Members As Needed
 	//
+	//Heap PriorityForAttack;
+	//We need to add a heap to order the enemies based on the priority.(random in Phase1).
 
 public:
 
@@ -16,6 +18,9 @@ public:
 	double GetHealth() const;
 	void SetNoOfAttacks(int);
 	void SetPower(double);
+	void Attack();//this should take as an arguement the enemy list.
+
+	void MakeHeap() {}//Add a function that takes the list of enemies and fills the heap for the attack function.
 
 	//
 	// TODO: Add More Member Functions As Needed

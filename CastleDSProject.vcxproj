@@ -272,7 +272,7 @@
     </ClCompile>
     <ClCompile Include="Containers\LinkedList.cpp" />
     <ClCompile Include="Containers\LLNode.cpp" />
-    <ClCompile Include="Demo_Main.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Enemies\Enemy.cpp" />
     <ClCompile Include="Enemies\Fighter.cpp" />
     <ClCompile Include="Enemies\Freezer.cpp" />

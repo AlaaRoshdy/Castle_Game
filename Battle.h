@@ -21,6 +21,8 @@ private:
 											// to point to the current active enemies 
 											// then pass the pointers list to the GUI function
 	Queue<Enemy*> InactiveList;
+	LinkedList ActiveList;
+
 	//
 	// TODO: Add More Data Members As Needed
 	//
@@ -32,8 +34,8 @@ public:
 	Castle * GetCastle();
 	void RunSimulation();
 	void LoadInput();
-	void Just_A_Demo();
 	void SaveOutput() {} // to be written in Phase 2 
+	void DisplayStats(); //Prints the statistics for Phase 1.
 
 	//
 	// TODO: Add More Member Functions As Needed

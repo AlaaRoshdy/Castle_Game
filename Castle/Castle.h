@@ -19,6 +19,7 @@ public:
 	Castle();
 	void SetTowerHealth(REGION TowerRegion, double h);
 	void  InitializeTowers(double, int, double);
+	void AllAtack();
 	//
 	// TODO: Add More Member Functions As Needed
 	//
