@@ -22,6 +22,10 @@ protected:
 	                //Always positive (ranges from 2 to 60)
 	double Health;	//Enemy health
 	
+	//hatem60010
+	ENEMY type; //new type defined at defs.h
+	State state;//new type
+	//TODO: Enemy Action Step -> dunno what to do 
 	//
 	// TODO: Add More Data Members As Needed
 	//
@@ -34,10 +38,14 @@ public:
 	REGION GetRegion() const;
 
 	void DecrementDist();
-
+	void setType(ENEMY);
 	void SetDistance(int d);
 	int GetDistance() const;
-
+	ENEMY getType();
+	State getState();
+	void setState(State s);
+	void updateState();
+	void hit();
 	// Virtual Functions: ----------------
 
 	//virtual void Move() = 0;	//All enemies can move
