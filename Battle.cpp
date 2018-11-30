@@ -33,6 +33,12 @@ void Battle::RunSimulation()
 	Just_A_Demo();
 }
 
+void Battle::LoadInput()
+{
+
+
+}
+
 
 //This is just a demo function for project introductory phase
 //It should be removed in phases 1&2

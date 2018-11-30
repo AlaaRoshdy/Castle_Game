@@ -26,8 +26,9 @@ public:
 	void AddEnemy(Enemy* Ptr);
 	Castle * GetCastle();
 	void RunSimulation();
-
-	void Just_A_Demo();	//just to show a demo and should be removed in phase1 1 & 2
+	void LoadInput();
+	void Just_A_Demo();
+	void SaveOutput() {} // to be written in Phase 2 
 
 	//
 	// TODO: Add More Member Functions As Needed
