@@ -16,6 +16,7 @@ public:
 	void DeleteAll();	//Deletes all nodes in the list
 	bool DeleteNode(Enemy* value);
 	void MoveAll();
+	void ArrayOfPtrs(Enemy* Arr[]);
 };
 
 #endif	

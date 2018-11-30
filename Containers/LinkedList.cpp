@@ -79,3 +79,14 @@ void LinkedList::MoveAll()
 		P = P->getNext();
 	}
 }
+void LinkedList::ArrayOfPtrs(Enemy*  Arr[])
+{
+	int i = 0;
+	LLNode *P = Head;
+	while (P != NULL)
+	{
+		Arr[i] = P->getItem();
+		P = P->getNext();
+		i++;
+	}
+}
