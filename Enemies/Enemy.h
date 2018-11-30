@@ -21,7 +21,9 @@ protected:
 	int Distance;	//Horizontal distance between enemy & the tower of its region
 	                //Always positive (ranges from 2 to 60)
 	double Health;	//Enemy health
-	
+	int ArrivalTime;// Arrival time of enemy
+	double Power;	//Enemy power
+	int RLD;		//reload period in unit steps
 	//hatem60010
 	ENEMY type; //new type defined at defs.h
 	State state;//new type
@@ -31,7 +33,7 @@ protected:
 	//
 
 public:
-	Enemy(color r_c, REGION r_region, int d = MaxDistance);
+	Enemy(color r_c, REGION r_region, int ID, double Health, int ArrivalTime, double Power, int RLD, int d = MaxDistance);
 	virtual ~Enemy();
 
 	color GetColor() const;

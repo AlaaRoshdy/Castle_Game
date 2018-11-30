@@ -1,10 +1,15 @@
 #include "Enemy.h"
 
 
-Enemy::Enemy(color r_c, REGION r_region, int d)
+Enemy::Enemy(color r_c, REGION r_region, int S, double H, int AT, double P, int RL, int d)
 {
 	Clr = r_c;
 	Region = r_region;
+	ID = S;
+	Health = H;
+	ArrivalTime = AT;
+	Power = P;
+	RLD = RL;
 	SetDistance(d);
 }
 
