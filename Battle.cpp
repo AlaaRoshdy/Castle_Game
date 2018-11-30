@@ -35,7 +35,7 @@ void Battle::RunSimulation()
 
 void Battle::LoadInput()
 {
-
+	
 
 }
 
