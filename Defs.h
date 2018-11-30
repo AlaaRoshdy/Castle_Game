@@ -17,6 +17,21 @@ enum REGION {
 	D_REG
 };
 
+enum ENEMY
+{
+	fighter,
+	healeer,
+	freezer
+};
+
+enum State
+{
+	inactive,
+	active,
+	frozen, 
+	killed
+};
+
 
 
 

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{33555AEC-C0E0-4A22-89CF-6A9E8125285C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Battle.cpp" />
+    <ClCompile Include="castle\Castle.cpp" />
+    <ClCompile Include="castle\Tower.cpp" />
+    <ClCompile Include="cmugraphicslib\auxil.cpp" />
+    <ClCompile Include="cmugraphicslib\CMUgraphics.cpp" />
+    <ClCompile Include="cmugraphicslib\colors.cpp" />
+    <ClCompile Include="cmugraphicslib\image.cpp" />
+    <ClCompile Include="cmugraphicslib\jpegload.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jcomapi.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jcparam.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jdapimin.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jdapistd.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jdatasrc.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jdcoefct.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jdcolor.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jddctmgr.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jdhuff.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jdinput.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jdmainct.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jdmarker.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jdmaster.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jdmerge.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jdphuff.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jdpostct.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jdsample.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jdtrans.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jerror.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jidctflt.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jidctfst.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jidctint.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jidctred.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jmemmgr.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jmemnobs.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jquant1.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jquant2.c" />
+    <ClCompile Include="cmugraphicslib\jpeg\jutils.c" />
+    <ClCompile Include="cmugraphicslib\keyqueue.cpp" />
+    <ClCompile Include="cmugraphicslib\mousequeue.cpp" />
+    <ClCompile Include="cmugraphicslib\windowinput.cpp" />
+    <ClCompile Include="Demo_Main.cpp" />
+    <ClCompile Include="enemies\Enemy.cpp" />
+    <ClCompile Include="gui\GUI.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Battle.h" />
+    <ClInclude Include="castle\Castle.h" />
+    <ClInclude Include="castle\Tower.h" />
+    <ClInclude Include="cmugraphicslib\auxil.h" />
+    <ClInclude Include="cmugraphicslib\CMUgraphics.h" />
+    <ClInclude Include="cmugraphicslib\colors.h" />
+    <ClInclude Include="cmugraphicslib\error.h" />
+    <ClInclude Include="cmugraphicslib\image.h" />
+    <ClInclude Include="cmugraphicslib\jpegload.h" />
+    <ClInclude Include="cmugraphicslib\jpeg\jconfig.h" />
+    <ClInclude Include="cmugraphicslib\jpeg\jdct.h" />
+    <ClInclude Include="cmugraphicslib\jpeg\jdhuff.h" />
+    <ClInclude Include="cmugraphicslib\jpeg\jerror.h" />
+    <ClInclude Include="cmugraphicslib\jpeg\jinclude.h" />
+    <ClInclude Include="cmugraphicslib\jpeg\jmemsys.h" />
+    <ClInclude Include="cmugraphicslib\jpeg\jmorecfg.h" />
+    <ClInclude Include="cmugraphicslib\jpeg\jpegint.h" />
+    <ClInclude Include="cmugraphicslib\jpeg\jpeglib.h" />
+    <ClInclude Include="cmugraphicslib\jpeg\jversion.h" />
+    <ClInclude Include="cmugraphicslib\keyqueue.h" />
+    <ClInclude Include="cmugraphicslib\mousequeue.h" />
+    <ClInclude Include="cmugraphicslib\version.h" />
+    <ClInclude Include="cmugraphicslib\windowinput.h" />
+    <ClInclude Include="Defs.h" />
+    <ClInclude Include="enemies\Enemy.h" />
+    <ClInclude Include="gui\GUI.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
