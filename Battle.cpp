@@ -52,6 +52,7 @@ void Battle::RunSimulation()
 		}
 		BCastle.AllAtack();
 		DisplayStats();
+		//fill the BEnemiesForDraw from the ActiveList LL.
 		// Redraw the enemies
 		pGUI->DrawBattle(BEnemiesForDraw, EnemyCount);
 
