@@ -2,6 +2,7 @@
 
 #include <iostream>
 
+
 Battle::Battle()
 {
 	EnemyCount = 0;
@@ -35,8 +36,52 @@ void Battle::RunSimulation()
 
 void Battle::LoadInput()
 {
-	
+	ifstream LoadFile;
+	LoadFile.open("input.txt");
+	double TH; LoadFile >> TH; int N; LoadFile >> N; double TP; LoadFile >> TP;
+	// InitializeTowers()
+	while (1) {
+		int SeqNum;  LoadFile >> SeqNum;
+		if (SeqNum == -1)
+			break;
+		int TYPin; LoadFile >> TYPin;  ENEMY TYP = ENEMY(TYPin);
+		int ArrivalTime; LoadFile >> ArrivalTime;
+		double EnemyHealth; LoadFile >> EnemyHealth;
+		double EnemyPower;  LoadFile >> EnemyPower;
+		int RLD;  LoadFile >> RLD;
+		char REGin;  LoadFile >> REGin;
+		REGION REG;
+		switch (REGin) 
+		{
+		case 'A':
+			REG = A_REG;
+			break;
+		case 'B':
+			REG = B_REG;
+			break;
+		case 'C':
+			REG = C_REG;
+			break;
+		case 'D':
+			REG = D_REG;
+			break;
+		}
+		Enemy * NewEnemy;
+		switch (TYP) {
+		case fighter:
+			// NewEnemy= new Fighter(//constructor inputs)
+			break;
+		case healer:
+			// NewEnemy= new healer(//constructor inputs)
+			break;
+		case freezer:
+			// NewEnemy= new freezer(//constructor inputs)
+			break;
+		}
+		//Next I will enqueue to inactive enemies Queue.
 
+
+	}
 }
 
 
