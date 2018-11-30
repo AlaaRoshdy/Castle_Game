@@ -38,8 +38,9 @@ void Battle::LoadInput()
 {
 	ifstream LoadFile;
 	LoadFile.open("input.txt");
+	Castle castle;
 	double TH; LoadFile >> TH; int N; LoadFile >> N; double TP; LoadFile >> TP;
-	// InitializeTowers()
+	castle.InitializeTowers(TH, N, TP);
 	while (1) {
 		int SeqNum;  LoadFile >> SeqNum;
 		if (SeqNum == -1)

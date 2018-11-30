@@ -17,8 +17,8 @@ class Castle
 public:
 
 	Castle();
-	//void SetTowerHealth(REGION TowerRegion, double h);
-	void  InitializeTowers(REGION, double, int, double);
+	void SetTowerHealth(REGION TowerRegion, double h);
+	void  InitializeTowers(double, int, double);
 	//
 	// TODO: Add More Member Functions As Needed
 	//
