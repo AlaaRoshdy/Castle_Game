@@ -19,6 +19,7 @@ public:
 	void SetTowerHealth(REGION TowerRegion, double h);
 	void  InitializeTowers(double, int, double);
 	void AllAtack( LinkedList& ActiveList);
+	string UpdateMsg();
 	//
 	// TODO: Add More Member Functions As Needed
 	//

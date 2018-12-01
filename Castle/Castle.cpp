@@ -39,12 +39,12 @@ void Castle::AllAtack( LinkedList& ActiveList)
 			Towers[3].Attack(RegionD, ActiveList);
 }
 
-string Castle::updateMsg()
+string Castle::UpdateMsg()
 {
 	string s;
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < NoOfRegions; i++)
 	{
-		s+="For Tower " + to_str(i) + Towers[i].update_msg  + "\n" ;
+		s+="For Tower " + to_string(i) + Towers[i].update_msg()  + "\n\n\n" ;
 	}
 	return s;
 }

@@ -9,7 +9,7 @@ Tower::Tower()
 string Tower::update_msg()
 {
 	string s = "";
-	s += "Health is: " + to_str(Health) + ", Power is: " + to_str(Power) + ", and Total killed is: " + to_str(NoOfAttacks);
+	s += "Health is: " + to_string(Health) + ", Power is: " + to_string(Power) + ", and Total killed is: " + to_string(NoOfAttacks);
 
 	return s;
 }

@@ -52,7 +52,7 @@ void Battle::RunSimulation()
 			//peekFront again 
 		}
 		BCastle.AllAtack(ActiveList);
-		DisplayStats();
+		pGUI->PrintMessage(BCastle.UpdateMsg());
 		//fill the BEnemiesForDraw from the ActiveList LL.
 		ActiveList.ArrayOfPtrs(BEnemiesForDraw, EnemyCount);
 
@@ -61,7 +61,6 @@ void Battle::RunSimulation()
 
 		pGUI->GetPointClicked(p);
 	}
-	pGUI->PrintMessage(BCastle.updateMsg());
 	delete pGUI;
 
 }
@@ -118,10 +117,6 @@ void Battle::LoadInput()
 	return;
 }
 
-void Battle::DisplayStats()
-{
-	
-}
 
 
 //This is just a demo function for project introductory phase
