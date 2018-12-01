@@ -2,6 +2,8 @@
 #include "..\Defs.h"
 #include "..\Containers\LinkedList.h"
 #include "..\Containers\Heap.h"
+#include <iostream>
+using namespace std; 
 class Tower
 {
 	double Health;
@@ -16,12 +18,12 @@ class Tower
 public:
 
 	Tower();
+	string  update_msg();
 	void SetHealth(double h);
 	double GetHealth() const;
 	void SetNoOfAttacks(int);
 	void SetPower(double);
 	void Attack(LinkedList EnemyRegion);//this should take as an arguement the enemy list.
-
 	void MakeHeap(LinkedList EnemyRegion);//Add a function that takes the list of enemies and fills the heap for the attack function.
 
 	//
