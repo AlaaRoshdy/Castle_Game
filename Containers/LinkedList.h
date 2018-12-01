@@ -17,11 +17,11 @@ public:
 	void DeleteAll();	//Deletes all nodes in the list
 	bool DeleteNode(Enemy* value);
 	void MoveAll();
-	void ArrayOfPtrs(Enemy* Arr[]);
+	void ArrayOfPtrs(Enemy* Arr[],  int& EnemyCount);
 	//Divide function will "distribute" the data of the main linked list into 4 main linked lists based on the 
 	//region the enemy belongs to.
-	void Divide(LinkedList RegionA, LinkedList RegionB, LinkedList RegionC, LinkedList RegionD);
-	void ToHeap(Heap EnemyPriority);
+	void Divide(LinkedList& RegionA, LinkedList& RegionB, LinkedList& RegionC, LinkedList& RegionD) const;
+	void ToHeap(Heap& EnemyPriority) const;
 };
 
 #endif	

@@ -36,14 +36,21 @@ void Tower::SetPower(double P)
 	Power = P;
 }
 
-void Tower::MakeHeap(LinkedList EnemyRegion)
+void Tower::MakeHeap(const LinkedList& EnemyRegion,Heap& EnemyPriority)
 {
-	Heap EnemyPriority;
 	EnemyRegion.ToHeap(EnemyPriority);
+	return ;
 }
 
-void Tower::Attack(LinkedList EnemyRegion)
+void Tower::Attack(LinkedList& EnemyRegion,LinkedList& AllEnemies)
 {
-	MakeHeap(EnemyRegion);
-
+	Heap EnemyPriority(MaxEnemyCount);
+	 MakeHeap(EnemyRegion, EnemyPriority);
+	//each time step, the tower kills several enemies.NoOfattack is the number of enemies to kill.
+	for (int i = 0; i < NoOfAttacks; i++)
+	{
+		HeapItem * ToDelete = EnemyPriority.Dequeue();
+		if (ToDelete)
+			AllEnemies.DeleteNode(ToDelete->getData());
+	}
 }

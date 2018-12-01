@@ -41,20 +41,20 @@ void Battle::RunSimulation()
 		//move the old 
 		ActiveList.MoveAll();
 		//check the top of the inactive Queue if it's time dequeue and add to the enemies container.
-		Enemy * TestEnemy; InactiveList.peekFront(TestEnemy);
+		Enemy * TestEnemy; 
 		Enemy * NewEnemy;
-		while (TestEnemy->getATime()>=TimeStep)
+		while (InactiveList.peekFront(TestEnemy)  && TestEnemy->getATime()<=TimeStep)
 		{
 			InactiveList.dequeue(NewEnemy);//deQ the enemy
 			ActiveList.InsertBeg(NewEnemy);
 			EnemyCount++;
 			//add to the cointaner array/linkedList
-			InactiveList.peekFront(TestEnemy); //peekFront again 
+			//peekFront again 
 		}
 		BCastle.AllAtack(ActiveList);
 		DisplayStats();
 		//fill the BEnemiesForDraw from the ActiveList LL.
-		ActiveList.ArrayOfPtrs(BEnemiesForDraw);
+		ActiveList.ArrayOfPtrs(BEnemiesForDraw, EnemyCount);
 
 		// Redraw the enemies
 		pGUI->DrawBattle(BEnemiesForDraw, EnemyCount);
@@ -69,7 +69,7 @@ void Battle::RunSimulation()
 void Battle::LoadInput()
 {
 	ifstream LoadFile;
-	LoadFile.open("input.txt");
+	LoadFile.open("Finalinput.txt");
 	double TH; LoadFile >> TH; int N; LoadFile >> N; double TP; LoadFile >> TP;
 	// InitializeTowers()
 	Enemy * NewEnemy;
@@ -78,7 +78,7 @@ void Battle::LoadInput()
 		int SeqNum;  LoadFile >> SeqNum;
 		if (SeqNum == -1)
 			break;
-		int TYPin; LoadFile >> TYPin;  ENEMY TYP = ENEMY(TYPin);
+		int TYPin; LoadFile >> TYPin;  ENEMY TYP = ENEMY(TYPin-1); // 1 2 3 to 0 1 2 
 		int ArrivalTime; LoadFile >> ArrivalTime;
 		double EnemyHealth; LoadFile >> EnemyHealth;
 		double EnemyPower;  LoadFile >> EnemyPower;
@@ -113,6 +113,7 @@ void Battle::LoadInput()
 		}
 		InactiveList.enqueue(NewEnemy);
 	}
+	NewEnemy = NULL;
 	delete NewEnemy;
 	return;
 }
