@@ -158,10 +158,10 @@
       <Filter>Enemies</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="HeapItem.cpp">
+    <ClCompile Include="Containers\Heap.cpp">
       <Filter>Containers</Filter>
     </ClCompile>
-    <ClCompile Include="Heap.cpp">
+    <ClCompile Include="Containers\HeapItem.cpp">
       <Filter>Containers</Filter>
     </ClCompile>
   </ItemGroup>
@@ -261,10 +261,10 @@
     <ClInclude Include="Enemies\Freezer.h">
       <Filter>Enemies</Filter>
     </ClInclude>
-    <ClInclude Include="HeapItem.h">
+    <ClInclude Include="Containers\Heap.h">
       <Filter>Containers</Filter>
     </ClInclude>
-    <ClInclude Include="Heap.h">
+    <ClInclude Include="Containers\HeapItem.h">
       <Filter>Containers</Filter>
     </ClInclude>
   </ItemGroup>

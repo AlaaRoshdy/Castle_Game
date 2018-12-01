@@ -2,7 +2,7 @@
 #ifndef HEAPITEM_H
 #define HEAPITEM_H
 
-#include "Enemies\Enemy.h"
+#include "..\Enemies\Enemy.h"
 class HeapItem
 {
 private:
