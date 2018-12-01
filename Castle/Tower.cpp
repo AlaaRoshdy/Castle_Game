@@ -28,13 +28,14 @@ void Tower::SetPower(double P)
 	Power = P;
 }
 
-void Tower::MakeHeap()
+void Tower::MakeHeap(LinkedList EnemyRegion)
 {
-
+	Heap EnemyPriority;
+	EnemyRegion.ToHeap(EnemyPriority);
 }
 
 void Tower::Attack(LinkedList EnemyRegion)
 {
-	MakeHeap();
+	MakeHeap(EnemyRegion);
 
 }
