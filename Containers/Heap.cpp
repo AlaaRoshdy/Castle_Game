@@ -123,16 +123,15 @@ bool Heap::Enqueue(int key, Enemy* data)
 //---------------------------------------
 HeapItem *Heap::Dequeue()
 {
+	if (m_iNumElements == 0)
+		return NULL;
 	HeapItem *temp = new HeapItem(m_Elements[0].getKey(), m_Elements[0].getData());
 	m_iNumElements--;
 	// Copy last item into root
 	m_Elements[0] = m_Elements[m_iNumElements];
 	// Reheap the tree
 	ReheapDown(0, m_iNumElements - 1);
-	if (m_iNumElements == 0)
-		return NULL;
-	else
-		return temp;
+	return temp;
 }
 
 //---------------------------------------

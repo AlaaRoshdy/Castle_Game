@@ -21,7 +21,7 @@ void Castle::InitializeTowers(double TH, int N, double TP)
 		
 }
 
-void Castle::AllAtack(LinkedList ActiveList)
+void Castle::AllAtack(const LinkedList& ActiveList)
 {
 	//Initialize 4 different linked lists, each will contain a list of enemies of its own region.
 	LinkedList RegionA;
