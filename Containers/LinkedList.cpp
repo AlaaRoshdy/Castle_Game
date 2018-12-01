@@ -1,5 +1,6 @@
 #include "LinkedList.h"
 #include <iostream>
+#include "time.h"
 using namespace std;
 
 
@@ -114,7 +115,14 @@ void LinkedList::Divide(LinkedList RegionA, LinkedList RegionB, LinkedList Regio
 		P = P->getNext();
 	}
 }
-void LinkedList::ToHeap(Heap EnemyPriority) 
+void LinkedList::ToHeap(Heap EnemyPriority)
 {
-
+	srand(time(NULL));
+	int max = 30;
+	LLNode *P = Head;
+	while (P->getNext())
+	{
+		EnemyPriority.Enqueue((rand() % (max+ 1)), P->getItem());
+		P = P->getNext();
+	}
 }

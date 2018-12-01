@@ -22,7 +22,7 @@ public:
 	void SetPower(double);
 	void Attack(LinkedList EnemyRegion);//this should take as an arguement the enemy list.
 
-	void MakeHeap(LinkedList EnemyRegion);//Add a function that takes the list of enemies and fills the heap for the attack function.
+	Heap MakeHeap(LinkedList EnemyRegion);//Add a function that takes the list of enemies and fills the heap for the attack function.
 
 	//
 	// TODO: Add More Member Functions As Needed
