@@ -319,6 +319,7 @@
     <ClInclude Include="GUI\GUI.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Finalinput.txt" />
     <Text Include="input.txt" />
     <Text Include="inputTrial.txt" />
   </ItemGroup>
