@@ -3,7 +3,7 @@
 
 Tower::Tower()
 {
-	SetHealth(TowerInitHealth);
+	//SetHealth(TowerInitHealth);
 }
 
 
