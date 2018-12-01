@@ -82,7 +82,7 @@ int Enemy::getATime() const
 
 /*void Enemy::hit()
 {
-	int k;
+	int k;	
 	if (Health >= 0.5) k = 1;
 	else k = 0.5;
 	Health = Health * k / Distance;
