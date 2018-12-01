@@ -4,12 +4,13 @@
 Tower::Tower()
 {
 	//SetHealth(TowerInitHealth);
+	NoOfAttacked = 0;
 }
 
 string Tower::update_msg()
 {
 	string s = "";
-	s += "Health is: " + to_string(Health) + ", Power is: " + to_string(Power) + ", and Total killed is: " + to_string(NoOfAttacks);
+	s += "Health is: " + to_string(Health) + ", Power is: " + to_string(Power) + ", and Total killed is: " + to_string(NoOfAttacked);
 
 	return s;
 }
@@ -50,12 +51,14 @@ void Tower::Attack(LinkedList& EnemyRegion,LinkedList& AllEnemies)
 	for (int i = 0; i < NoOfAttacks; i++)
 	{
 		HeapItem * ToDelete = EnemyPriority.Dequeue();
-		if (ToDelete)
+		if (ToDelete) {
+			NoOfAttacked++;
 			AllEnemies.DeleteNode(ToDelete->getData());
+		}
 	}
 }
 
-int getNoOfAttacks()
+int Tower::getNoOfAttacks()
 {
 	return NoOfAttacks;
 }

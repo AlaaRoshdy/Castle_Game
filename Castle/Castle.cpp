@@ -39,25 +39,35 @@ void Castle::AllAtack( LinkedList& ActiveList)
 			Towers[3].Attack(RegionD, ActiveList);
 }
 
-string Castle::UpdateMsg()
+string Castle::DispStats(GUI* pGUI)
 {
 	string s;
 	for (int i = 0; i < NoOfRegions; i++)
 	{
-		s+="For Tower " + to_string(i) + Towers[i].update_msg()  + "\n\n\n" ;
+
+		string tower_literal;//A-D
+		switch(i) {
+		case 0:
+			tower_literal = "A";
+			break;
+		case 1:
+			tower_literal = "B";
+			break;
+		case 2:
+			tower_literal = "C";
+			break;
+		case 3:
+			tower_literal = "D";
+			break;
+
+		}
+
+		s="For Tower " + tower_literal +" " +  Towers[i].update_msg()  + "\n" ;
+		pGUI->PrintMessage(s, 1 + i * 0.2);
 	}
 	return s;
 }
 
-int num_attacks()
-{
-	int sum = 0;
-	for (int i = 0; i < 4; i++)
-	{
-		sum += Towers[i].getNoOfAttacks();
-	}
-	return sum;
-}
 
 
 

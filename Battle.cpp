@@ -1,6 +1,7 @@
 #include "Battle.h"
 
 #include <iostream>
+#include <string>
 
 
 Battle::Battle()
@@ -26,8 +27,7 @@ Castle * Battle::GetCastle()
 
 void Battle::RunSimulation()
 {
-	//Just_A_Demo();
-	LoadInput();
+	LoadInput(); //Will ask user to choose file in Phase 2.
 	GUI * pGUI = new GUI;
 	pGUI->PrintMessage("This is phase 1. Click to move to next step");
 	// Drawing the battle
@@ -52,7 +52,9 @@ void Battle::RunSimulation()
 			//peekFront again 
 		}
 		BCastle.AllAtack(ActiveList);
-		pGUI->PrintMessage(BCastle.UpdateMsg());
+		pGUI->PrintMessage(""); // to clear.
+		BCastle.DispStats(pGUI);
+
 		//fill the BEnemiesForDraw from the ActiveList LL.
 		ActiveList.ArrayOfPtrs(BEnemiesForDraw, EnemyCount);
 
@@ -61,9 +63,6 @@ void Battle::RunSimulation()
 
 		pGUI->GetPointClicked(p);
 	}
-	pGUI->PrintMessage(BCastle.updateMsg());
-	pGUI->PrintMessage(to_string(BCastle.numAttacks()));
-		//todo now
 
 	delete pGUI;
 
@@ -72,7 +71,18 @@ void Battle::RunSimulation()
 void Battle::LoadInput()
 {
 	ifstream LoadFile;
-	LoadFile.open("Finalinput.txt");
+	string name;
+	cout << "Please type file name:\n";
+	cin >> name;
+	LoadFile.open("name");
+	while (!LoadFile) 
+	{
+		cout << "Invalid file please try again\n";
+		cout << "Please type file name:\n";
+		cin >> name;
+		LoadFile.open(name);
+	}
+	
 	double TH; LoadFile >> TH; int N; LoadFile >> N; double TP; LoadFile >> TP;
 	// InitializeTowers()
 	Enemy * NewEnemy;
@@ -81,14 +91,14 @@ void Battle::LoadInput()
 		int SeqNum;  LoadFile >> SeqNum;
 		if (SeqNum == -1)
 			break;
-		int TYPin; LoadFile >> TYPin;  ENEMY TYP = ENEMY(TYPin-1); // 1 2 3 to 0 1 2 
+		int TYPin; LoadFile >> TYPin;  ENEMY TYP = ENEMY(TYPin - 1); // 1 2 3 to 0 1 2 
 		int ArrivalTime; LoadFile >> ArrivalTime;
 		double EnemyHealth; LoadFile >> EnemyHealth;
 		double EnemyPower;  LoadFile >> EnemyPower;
 		int RLD;  LoadFile >> RLD;
 		char REGin;  LoadFile >> REGin;
 		REGION REG;
-		switch (REGin) 
+		switch (REGin)
 		{
 		case 'A':
 			REG = A_REG;
@@ -105,13 +115,13 @@ void Battle::LoadInput()
 		}
 		switch (TYP) {
 		case fighter:
-			NewEnemy = new Fighter(REG, SeqNum, EnemyHealth, ArrivalTime, EnemyPower,RLD);
+			NewEnemy = new Fighter(REG, SeqNum, EnemyHealth, ArrivalTime, EnemyPower, RLD);
 			break;
 		case healer:
-			 NewEnemy= new Healer(REG, SeqNum, EnemyHealth, ArrivalTime, EnemyPower, RLD);
+			NewEnemy = new Healer(REG, SeqNum, EnemyHealth, ArrivalTime, EnemyPower, RLD);
 			break;
 		case freezer:
-			 NewEnemy= new Freezer(REG, SeqNum, EnemyHealth, ArrivalTime, EnemyPower, RLD);
+			NewEnemy = new Freezer(REG, SeqNum, EnemyHealth, ArrivalTime, EnemyPower, RLD);
 			break;
 		}
 		InactiveList.enqueue(NewEnemy);
@@ -119,6 +129,8 @@ void Battle::LoadInput()
 	NewEnemy = NULL;
 	delete NewEnemy;
 	return;
+
+	
 }
 
 
