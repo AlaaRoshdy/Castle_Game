@@ -77,7 +77,7 @@ void LinkedList::MoveAll()
 	LLNode *P = Head;
 	while (P != NULL)
 	{
-		P->getItem->Move();
+		P->getItem()->Move();
 		P = P->getNext();
 	}
 }
