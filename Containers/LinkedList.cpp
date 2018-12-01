@@ -114,3 +114,7 @@ void LinkedList::Divide(LinkedList RegionA, LinkedList RegionB, LinkedList Regio
 		P = P->getNext();
 	}
 }
+void LinkedList::ToHeap(Heap EnemyPriority) 
+{
+
+}
