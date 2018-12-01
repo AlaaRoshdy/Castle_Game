@@ -321,7 +321,8 @@
   <ItemGroup>
     <Text Include="Finalinput.txt" />
     <Text Include="input.txt" />
-    <Text Include="inputTrial.txt" />
+    <Text Include="InputSample2.txt" />
+    <Text Include="InputSample3.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
