@@ -41,15 +41,15 @@ void Battle::RunSimulation()
 		//move the old 
 		ActiveList.MoveAll();
 		//check the top of the inactive Queue if it's time dequeue and add to the enemies container.
-		Enemy * TestEnemy; InactiveList.peekFront(TestEnemy);
+		Enemy * TestEnemy; 
 		Enemy * NewEnemy;
-		while (TestEnemy->getATime()>=TimeStep)
+		while (InactiveList.peekFront(TestEnemy)  && TestEnemy->getATime()<=TimeStep)
 		{
 			InactiveList.dequeue(NewEnemy);//deQ the enemy
 			ActiveList.InsertBeg(NewEnemy);
 			EnemyCount++;
 			//add to the cointaner array/linkedList
-			InactiveList.peekFront(TestEnemy); //peekFront again 
+			//peekFront again 
 		}
 		BCastle.AllAtack(ActiveList);
 		DisplayStats();
@@ -113,6 +113,7 @@ void Battle::LoadInput()
 		}
 		InactiveList.enqueue(NewEnemy);
 	}
+	NewEnemy = NULL;
 	delete NewEnemy;
 	return;
 }

@@ -54,6 +54,7 @@ bool LinkedList::DeleteNode(Enemy* value)
 	if (P->getItem() == value) {
 		Head = P->getNext();
 		delete P;
+		P = NULL;
 		count--;
 		return true;
 	}
@@ -62,6 +63,7 @@ bool LinkedList::DeleteNode(Enemy* value)
 			LLNode *temp = P->getNext();
 			LLNode *nxt = temp->getNext();
 			delete temp;
+			temp = NULL;
 			P->setNext(nxt);
 			count--;
 			return true;
@@ -92,7 +94,7 @@ void LinkedList::ArrayOfPtrs(Enemy*  Arr[])
 		i++;
 	}
 }
-void LinkedList::Divide(LinkedList RegionA, LinkedList RegionB, LinkedList RegionC, LinkedList RegionD)
+void LinkedList::Divide(LinkedList& RegionA, LinkedList& RegionB, LinkedList& RegionC, LinkedList& RegionD) const
 {
 	REGION region;		//The region data stored in the enemy linked list will be stored in this variable.
 	LLNode *P = Head;	//Get the pointer to the beginning of the linked list.
@@ -105,22 +107,26 @@ void LinkedList::Divide(LinkedList RegionA, LinkedList RegionB, LinkedList Regio
 			{
 			case A_REG:
 				RegionA.InsertBeg(EnemyRegion);
+				break;
 			case B_REG:
 				RegionB.InsertBeg(EnemyRegion);
+				break;
 			case C_REG:
 				RegionC.InsertBeg(EnemyRegion);
+				break;
 			case D_REG:
 				RegionD.InsertBeg(EnemyRegion);
+				break;
 			}
 		P = P->getNext();
 	}
 }
-void LinkedList::ToHeap(Heap EnemyPriority)
+void LinkedList::ToHeap(Heap& EnemyPriority) const
 {
 	srand(time(NULL));
 	int max = 30;
 	LLNode *P = Head;
-	while (P->getNext())
+	while (P!=NULL)
 	{
 		EnemyPriority.Enqueue((rand() % (max+ 1)), P->getItem());
 		P = P->getNext();

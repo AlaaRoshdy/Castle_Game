@@ -10,7 +10,7 @@ Enemy::Enemy(color r_c, REGION r_region, int S, double H, int AT, double P, int 
 	ArrivalTime = AT;
 	Power = P;
 	RLD = RL;
-	SetDistance(distance);
+	Distance=distance;
 }
 
 Enemy::~Enemy()
