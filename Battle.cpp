@@ -54,7 +54,7 @@ void Battle::RunSimulation()
 		BCastle.AllAtack(ActiveList);
 		DisplayStats();
 		//fill the BEnemiesForDraw from the ActiveList LL.
-		ActiveList.ArrayOfPtrs(BEnemiesForDraw);
+		ActiveList.ArrayOfPtrs(BEnemiesForDraw, EnemyCount);
 
 		// Redraw the enemies
 		pGUI->DrawBattle(BEnemiesForDraw, EnemyCount);
@@ -69,7 +69,7 @@ void Battle::RunSimulation()
 void Battle::LoadInput()
 {
 	ifstream LoadFile;
-	LoadFile.open("Finalinput.txt");
+	LoadFile.open("inputTrial.txt");
 	double TH; LoadFile >> TH; int N; LoadFile >> N; double TP; LoadFile >> TP;
 	// InitializeTowers()
 	Enemy * NewEnemy;
@@ -78,7 +78,7 @@ void Battle::LoadInput()
 		int SeqNum;  LoadFile >> SeqNum;
 		if (SeqNum == -1)
 			break;
-		int TYPin; LoadFile >> TYPin;  ENEMY TYP = ENEMY(TYPin);
+		int TYPin; LoadFile >> TYPin;  ENEMY TYP = ENEMY(TYPin-1); // 1 2 3 to 0 1 2 
 		int ArrivalTime; LoadFile >> ArrivalTime;
 		double EnemyHealth; LoadFile >> EnemyHealth;
 		double EnemyPower;  LoadFile >> EnemyPower;

@@ -18,7 +18,7 @@ public:
 	Castle();
 	void SetTowerHealth(REGION TowerRegion, double h);
 	void  InitializeTowers(double, int, double);
-	void AllAtack(const LinkedList& ActiveList);
+	void AllAtack( LinkedList& ActiveList);
 	//
 	// TODO: Add More Member Functions As Needed
 	//

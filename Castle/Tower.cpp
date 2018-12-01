@@ -34,7 +34,7 @@ void Tower::MakeHeap(const LinkedList& EnemyRegion,Heap& EnemyPriority)
 	return ;
 }
 
-void Tower::Attack(LinkedList& EnemyRegion)
+void Tower::Attack(LinkedList& EnemyRegion,LinkedList& AllEnemies)
 {
 	Heap EnemyPriority(MaxEnemyCount);
 	 MakeHeap(EnemyRegion, EnemyPriority);
@@ -43,6 +43,6 @@ void Tower::Attack(LinkedList& EnemyRegion)
 	{
 		HeapItem * ToDelete = EnemyPriority.Dequeue();
 		if (ToDelete)
-			EnemyRegion.DeleteNode(ToDelete->getData());
+			AllEnemies.DeleteNode(ToDelete->getData());
 	}
 }

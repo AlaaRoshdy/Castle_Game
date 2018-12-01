@@ -83,7 +83,7 @@ void LinkedList::MoveAll()
 		P = P->getNext();
 	}
 }
-void LinkedList::ArrayOfPtrs(Enemy*  Arr[])
+void LinkedList::ArrayOfPtrs(Enemy*  Arr[], int& EnemyCount)
 {
 	int i = 0;
 	LLNode *P = Head;
@@ -93,6 +93,7 @@ void LinkedList::ArrayOfPtrs(Enemy*  Arr[])
 		P = P->getNext();
 		i++;
 	}
+	EnemyCount = count;
 }
 void LinkedList::Divide(LinkedList& RegionA, LinkedList& RegionB, LinkedList& RegionC, LinkedList& RegionD) const
 {
