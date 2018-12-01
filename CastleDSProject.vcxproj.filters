@@ -270,8 +270,8 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
-    <Text Include="inputTrial.txt" />
     <Text Include="Finalinput.txt" />
     <Text Include="InputSample2.txt" />
+    <Text Include="InputSample3.txt" />
   </ItemGroup>
 </Project>
