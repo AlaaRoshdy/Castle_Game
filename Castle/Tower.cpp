@@ -28,14 +28,20 @@ void Tower::SetPower(double P)
 	Power = P;
 }
 
-void Tower::MakeHeap(LinkedList EnemyRegion)
+Heap Tower::MakeHeap(LinkedList EnemyRegion)
 {
 	Heap EnemyPriority;
 	EnemyRegion.ToHeap(EnemyPriority);
+	return EnemyPriority;
 }
 
 void Tower::Attack(LinkedList EnemyRegion)
 {
-	MakeHeap(EnemyRegion);
-
+	Heap EnemyPriority;
+	EnemyPriority = MakeHeap(EnemyRegion);
+	//each time step, the tower kills 3 enemies.
+	for (int i = 0; i < NoOfAttacks; i++)
+	{
+		EnemyPriority.Dequeue();
+	}
 }
