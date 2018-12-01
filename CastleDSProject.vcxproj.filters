@@ -272,5 +272,6 @@
     <Text Include="input.txt" />
     <Text Include="inputTrial.txt" />
     <Text Include="Finalinput.txt" />
+    <Text Include="InputSample2.txt" />
   </ItemGroup>
 </Project>
