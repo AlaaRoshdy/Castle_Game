@@ -3,7 +3,6 @@
 #include "..\Containers\LinkedList.h"
 #include "..\Containers\Heap.h"
 #include <iostream>
-using namespace std; 
 class Tower
 {
 	double Health;
