@@ -69,7 +69,7 @@ void Battle::RunSimulation()
 void Battle::LoadInput()
 {
 	ifstream LoadFile;
-	LoadFile.open("inputTrial.txt");
+	LoadFile.open("Finalinput.txt");
 	double TH; LoadFile >> TH; int N; LoadFile >> N; double TP; LoadFile >> TP;
 	// InitializeTowers()
 	Enemy * NewEnemy;
