@@ -39,9 +39,9 @@ void Tower::Attack(LinkedList EnemyRegion)
 {
 	Heap EnemyPriority;
 	EnemyPriority = MakeHeap(EnemyRegion);
-	//each time step, the tower kills 3 enemies.
+	//each time step, the tower kills several enemies.NoOfattack is the number of enemies to kill.
 	for (int i = 0; i < NoOfAttacks; i++)
 	{
-		EnemyPriority.Dequeue();
+		EnemyRegion.DeleteNode(EnemyPriority.Dequeue()->getData());
 	}
 }
