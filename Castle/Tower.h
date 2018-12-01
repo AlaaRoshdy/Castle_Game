@@ -2,6 +2,7 @@
 #include "..\Defs.h"
 #include "..\Containers\LinkedList.h"
 #include "..\Containers\Heap.h"
+#include <iostream>
 class Tower
 {
 	double Health;
@@ -16,6 +17,7 @@ class Tower
 public:
 
 	Tower();
+	string  update_msg();
 	void SetHealth(double h);
 	double GetHealth() const;
 	void SetNoOfAttacks(int);

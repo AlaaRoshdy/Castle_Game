@@ -6,6 +6,14 @@ Tower::Tower()
 	//SetHealth(TowerInitHealth);
 }
 
+string Tower::update_msg()
+{
+	string s = "";
+	s += "Health is: " + to_str(Health) + ", Power is: " + to_str(Power) + ", and Total killed is: " + to_str(NoOfAttacks);
+
+	return s;
+}
+
 
 void Tower::SetHealth(double h)
 {
