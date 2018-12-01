@@ -21,6 +21,7 @@ public:
 	void SetHealth(double h);
 	double GetHealth() const;
 	void SetNoOfAttacks(int);
+	int getNoOfAttacks();
 	void SetPower(double);
 	void Attack(LinkedList& EnemyRegion, LinkedList& AllEnemies);//this should take as an arguement the enemy list.
 

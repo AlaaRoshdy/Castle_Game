@@ -62,6 +62,9 @@ void Battle::RunSimulation()
 		pGUI->GetPointClicked(p);
 	}
 	pGUI->PrintMessage(BCastle.updateMsg());
+	pGUI->PrintMessage(to_string(BCastle.numAttacks()));
+		//todo now
+
 	delete pGUI;
 
 }

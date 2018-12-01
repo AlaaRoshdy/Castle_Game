@@ -49,6 +49,16 @@ string Castle::updateMsg()
 	return s;
 }
 
+int num_attacks()
+{
+	int sum = 0;
+	for (int i = 0; i < 4; i++)
+	{
+		sum += Towers[i].getNoOfAttacks();
+	}
+	return sum;
+}
+
 
 
 

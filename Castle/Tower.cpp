@@ -54,3 +54,8 @@ void Tower::Attack(LinkedList& EnemyRegion,LinkedList& AllEnemies)
 			AllEnemies.DeleteNode(ToDelete->getData());
 	}
 }
+
+int getNoOfAttacks()
+{
+	return NoOfAttacks;
+}
