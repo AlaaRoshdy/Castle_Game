@@ -273,5 +273,6 @@
     <Text Include="Finalinput.txt" />
     <Text Include="InputSample2.txt" />
     <Text Include="InputSample3.txt" />
+    <Text Include="ID.txt" />
   </ItemGroup>
 </Project>
