@@ -3,9 +3,8 @@
 #include "..\Defs.h"
 #include "..\CMUgraphicsLib\CMUgraphics.h"
 #include "..\GUI\GUI.h"
-
+#include "..\Containers\LinkedList.h"
 #include "Tower.h"
-
 class Castle
 {
 	Tower Towers[NoOfRegions];
@@ -19,7 +18,7 @@ public:
 	Castle();
 	void SetTowerHealth(REGION TowerRegion, double h);
 	void  InitializeTowers(double, int, double);
-	void AllAtack();
+	void AllAtack(LinkedList ActiveList);
 	//
 	// TODO: Add More Member Functions As Needed
 	//

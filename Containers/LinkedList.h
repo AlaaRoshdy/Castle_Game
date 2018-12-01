@@ -17,6 +17,9 @@ public:
 	bool DeleteNode(Enemy* value);
 	void MoveAll();
 	void ArrayOfPtrs(Enemy* Arr[]);
+	//Divide function will "distribute" the data of the main linked list into 4 main linked lists based on the 
+	//region the enemy belongs to.
+	void Divide(LinkedList RegionA, LinkedList RegionB, LinkedList RegionC, LinkedList RegionD);
 };
 
 #endif	

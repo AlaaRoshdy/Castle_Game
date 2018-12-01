@@ -28,7 +28,13 @@ void Tower::SetPower(double P)
 	Power = P;
 }
 
-void Tower::Attack()
+void Tower::MakeHeap()
 {
+
+}
+
+void Tower::Attack(LinkedList EnemyRegion)
+{
+	MakeHeap();
 
 }

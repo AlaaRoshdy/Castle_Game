@@ -158,6 +158,12 @@
       <Filter>Enemies</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="HeapItem.cpp">
+      <Filter>Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Heap.cpp">
+      <Filter>Containers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -254,6 +260,12 @@
     </ClInclude>
     <ClInclude Include="Enemies\Freezer.h">
       <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="HeapItem.h">
+      <Filter>Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Heap.h">
+      <Filter>Containers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

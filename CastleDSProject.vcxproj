@@ -272,6 +272,8 @@
     </ClCompile>
     <ClCompile Include="Containers\LinkedList.cpp" />
     <ClCompile Include="Containers\LLNode.cpp" />
+    <ClCompile Include="Heap.cpp" />
+    <ClCompile Include="HeapItem.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Enemies\Enemy.cpp" />
     <ClCompile Include="Enemies\Fighter.cpp" />
@@ -313,6 +315,8 @@
     <ClInclude Include="Enemies\Freezer.h" />
     <ClInclude Include="Enemies\Healer.h" />
     <ClInclude Include="GUI\GUI.h" />
+    <ClInclude Include="HeapItem.h" />
+    <ClInclude Include="Heap.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />

@@ -51,10 +51,11 @@ void Battle::RunSimulation()
 			//add to the cointaner array/linkedList
 			InactiveList.peekFront(TestEnemy); //peekFront again 
 		}
-		BCastle.AllAtack();
+		BCastle.AllAtack(ActiveList);
 		DisplayStats();
 		//fill the BEnemiesForDraw from the ActiveList LL.
 		ActiveList.ArrayOfPtrs(BEnemiesForDraw);
+
 		// Redraw the enemies
 		pGUI->DrawBattle(BEnemiesForDraw, EnemyCount);
 

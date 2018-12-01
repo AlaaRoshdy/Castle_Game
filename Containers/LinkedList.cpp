@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+
 LinkedList::LinkedList()
 {
 	count = 0;
@@ -88,5 +89,28 @@ void LinkedList::ArrayOfPtrs(Enemy*  Arr[])
 		Arr[i] = P->getItem();
 		P = P->getNext();
 		i++;
+	}
+}
+void LinkedList::Divide(LinkedList RegionA, LinkedList RegionB, LinkedList RegionC, LinkedList RegionD)
+{
+	REGION region;		//The region data stored in the enemy linked list will be stored in this variable.
+	LLNode *P = Head;	//Get the pointer to the beginning of the linked list.
+	Enemy* EnemyRegion; //Individual data of the linked list will be stored in this variable and updated with each while loop.
+	while (P != NULL)
+	{
+		EnemyRegion = P->getItem();
+		region = EnemyRegion->GetRegion();	//Extract the region of that the enemy is in in a variable.
+			switch (region)
+			{
+			case A_REG:
+				RegionA.InsertBeg(EnemyRegion);
+			case B_REG:
+				RegionB.InsertBeg(EnemyRegion);
+			case C_REG:
+				RegionC.InsertBeg(EnemyRegion);
+			case D_REG:
+				RegionD.InsertBeg(EnemyRegion);
+			}
+		P = P->getNext();
 	}
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include "..\Defs.h"
+#include "..\Containers\LinkedList.h"
 class Tower
 {
 	double Health;
@@ -18,9 +19,9 @@ public:
 	double GetHealth() const;
 	void SetNoOfAttacks(int);
 	void SetPower(double);
-	void Attack();//this should take as an arguement the enemy list.
+	void Attack(LinkedList EnemyRegion);//this should take as an arguement the enemy list.
 
-	void MakeHeap() {}//Add a function that takes the list of enemies and fills the heap for the attack function.
+	void MakeHeap();//Add a function that takes the list of enemies and fills the heap for the attack function.
 
 	//
 	// TODO: Add More Member Functions As Needed
