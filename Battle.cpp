@@ -74,7 +74,7 @@ void Battle::LoadInput()
 	string name;
 	cout << "Please type file name:\n";
 	cin >> name;
-	LoadFile.open("name");
+	LoadFile.open(name);
 	while (!LoadFile) 
 	{
 		cout << "Invalid file please try again\n";
