@@ -5,7 +5,6 @@
 #include "..\GUI\GUI.h"
 #include "..\Containers\LinkedList.h"
 #include "Tower.h"
-using namespace std;
 class Castle
 {
 	Tower Towers[NoOfRegions];
