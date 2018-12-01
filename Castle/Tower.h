@@ -8,6 +8,7 @@ class Tower
 	double Health;
 	double Power;
 	int NoOfAttacks;
+	int NoOfAttacked;
 	//
 	// TODO: Add More Data Members As Needed
 	//

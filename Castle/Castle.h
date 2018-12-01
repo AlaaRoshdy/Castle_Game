@@ -5,6 +5,7 @@
 #include "..\GUI\GUI.h"
 #include "..\Containers\LinkedList.h"
 #include "Tower.h"
+#include "../GUI/GUI.h"
 class Castle
 {
 	Tower Towers[NoOfRegions];
@@ -19,7 +20,7 @@ public:
 	void SetTowerHealth(REGION TowerRegion, double h);
 	void  InitializeTowers(double, int, double);
 	void AllAtack( LinkedList& ActiveList);
-	int num_attacks();
+	string DispStats(GUI* pGUI);
 	//
 	// TODO: Add More Member Functions As Needed
 	//

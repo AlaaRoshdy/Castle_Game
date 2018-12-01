@@ -69,6 +69,7 @@ public:
 
 	// Output Functions  ---------------------------
 	void PrintMessage(string msg) const; // prints a message in the status bar
+	void PrintMessage(string msg, double height) const;
 
 	//void DrawMenu() const;	// draws the game menu
 

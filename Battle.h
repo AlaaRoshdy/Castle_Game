@@ -35,7 +35,6 @@ public:
 	void RunSimulation();
 	void LoadInput();
 	void SaveOutput() {} // to be written in Phase 2 
-	void DisplayStats(); //Prints the statistics for Phase 1.
 
 	//
 	// TODO: Add More Member Functions As Needed
