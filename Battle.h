@@ -1,8 +1,13 @@
 #pragma once
 
 #include "Enemies\Enemy.h"
+#include "Enemies/Fighter.h"
+#include "Enemies/Freezer.h"
+#include "Enemies/Healer.h"
 #include "Castle\Castle.h"
-
+#include <fstream>
+#include "Containers/LinkedList.h"
+#include "Containers/Queue.h"
 // it is the controller of the project
 class Battle
 {
@@ -15,6 +20,8 @@ private:
 											// At every time step, you should update those pointers 
 											// to point to the current active enemies 
 											// then pass the pointers list to the GUI function
+	Queue<Enemy*> InactiveList;
+	LinkedList ActiveList;
 
 	//
 	// TODO: Add More Data Members As Needed
@@ -26,8 +33,8 @@ public:
 	void AddEnemy(Enemy* Ptr);
 	Castle * GetCastle();
 	void RunSimulation();
-
-	void Just_A_Demo();	//just to show a demo and should be removed in phase1 1 & 2
+	void LoadInput();
+	void SaveOutput() {} // to be written in Phase 2 
 
 	//
 	// TODO: Add More Member Functions As Needed

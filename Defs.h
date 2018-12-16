@@ -7,7 +7,7 @@
 		                        // if they are in the same region and same distance
 								// (will be drawn vertical to each other)
 #define MaxEnemyCount 300       // the maximum number of enemies the application can work on
-#define TowerInitHealth 200
+//#define TowerInitHealth 200 It is given in the input file.
 
 //The four regions: A, B, C , and D
 enum REGION {	
@@ -20,7 +20,7 @@ enum REGION {
 enum ENEMY
 {
 	fighter,
-	healeer,
+	healer,
 	freezer
 };
 

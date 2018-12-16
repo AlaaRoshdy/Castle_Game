@@ -130,7 +130,6 @@
       <Filter>CMUgraphicsLib</Filter>
     </ClCompile>
     <ClCompile Include="Battle.cpp" />
-    <ClCompile Include="Demo_Main.cpp" />
     <ClCompile Include="GUI\GUI.cpp">
       <Filter>GUI</Filter>
     </ClCompile>
@@ -147,6 +146,22 @@
       <Filter>Containers</Filter>
     </ClCompile>
     <ClCompile Include="Containers\LLNode.cpp">
+      <Filter>Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemies\Fighter.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemies\Healer.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemies\Freezer.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Containers\Heap.cpp">
+      <Filter>Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Containers\HeapItem.cpp">
       <Filter>Containers</Filter>
     </ClCompile>
   </ItemGroup>
@@ -237,5 +252,27 @@
     <ClInclude Include="Containers\Queue.h">
       <Filter>Containers</Filter>
     </ClInclude>
+    <ClInclude Include="Enemies\Fighter.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemies\Healer.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemies\Freezer.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Containers\Heap.h">
+      <Filter>Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Containers\HeapItem.h">
+      <Filter>Containers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="input.txt" />
+    <Text Include="Finalinput.txt" />
+    <Text Include="InputSample2.txt" />
+    <Text Include="InputSample3.txt" />
+    <Text Include="ID.txt" />
   </ItemGroup>
 </Project>

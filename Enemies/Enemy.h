@@ -7,6 +7,8 @@
 //You can choose whatever colors you like for your enemies
 const color FIGHTER_CLR = DARKBLUE;
 const color HEALER_CLR = ORANGERED;
+const color FREEZER_CLR = AZURE;
+const color FROZEN_CLR = SNOW; //to be used when the enemy gets frozen.
 
 
 // Enemy is the base class of each type of enemy
@@ -21,9 +23,11 @@ protected:
 	int Distance;	//Horizontal distance between enemy & the tower of its region
 	                //Always positive (ranges from 2 to 60)
 	double Health;	//Enemy health
-	
+	int ArrivalTime;// Arrival time of enemy
+	double Power;	//Enemy power
+	int RLD;		//reload period in unit steps
 	//hatem60010
-	ENEMY type; //new type defined at defs.h
+	//ENEMY type; //new type defined at defs.h
 	State state;//new type
 	//TODO: Enemy Action Step -> dunno what to do 
 	//
@@ -31,25 +35,26 @@ protected:
 	//
 
 public:
-	Enemy(color r_c, REGION r_region, int d = MaxDistance);
+	Enemy(color r_c, REGION r_region, int ID, double Health, int ArrivalTime, double Power, int RLD, int distance = MaxDistance);
 	virtual ~Enemy();
 
 	color GetColor() const;
 	REGION GetRegion() const;
 
 	void DecrementDist();
-	void setType(ENEMY);
+	//void setType(ENEMY);
 	void SetDistance(int d);
 	int GetDistance() const;
-	ENEMY getType();
+	//ENEMY getType();
 	State getState();
 	void setState(State s);
 	void updateState();
-	void hit();
+	int getATime() const;
+	void Move();	//All enemies can move
 	// Virtual Functions: ----------------
 
-	//virtual void Move() = 0;	//All enemies can move
-	//virtual void Act() = 0;	//Acting means fighting or healing
+	
+	virtual void Act() = 0;	//Acting means fighting or healing
 
 	//
 	// TODO: Add More Member Functions As Needed

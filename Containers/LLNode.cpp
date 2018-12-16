@@ -1,34 +1,34 @@
 
 #include "LLNode.h"
 
-Node::Node( )
+LLNode::LLNode( )
 {
 	next= NULL;
 }  // end default constructor
 
-Node::Node( int newItem)
+LLNode::LLNode(Enemy* newItem)
 {
 	item = newItem;
 	next= NULL;
 
 }//end constructor
 
-void Node::setItem( int newItem)
+void LLNode::setItem(Enemy* newItem)
 {
 	item = newItem;
 } // end setItem
 
-void Node::setNext(Node* nextNodePtr)
+void LLNode::setNext(LLNode* nextNodePtr)
 {
 next = nextNodePtr;
 } // end setNext
 
-int Node::getItem() const
+Enemy* LLNode::getItem() const
 {
 return item;
 } // end getItem
 
-Node* Node::getNext() const
+LLNode* LLNode::getNext() const
 {
 return next;
 } // end getNext

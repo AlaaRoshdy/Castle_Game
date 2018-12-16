@@ -1,6 +1,8 @@
 #include "Battle.h"
 
 #include <iostream>
+#include <string>
+
 
 Battle::Battle()
 {
@@ -23,20 +25,119 @@ Castle * Battle::GetCastle()
 	return &BCastle;
 }
 
-
-
-
-
-
 void Battle::RunSimulation()
 {
-	Just_A_Demo();
+	LoadInput(); //Will ask user to choose file in Phase 2.
+	GUI * pGUI = new GUI;
+	pGUI->PrintMessage("This is phase 1. Click to move to next step");
+	// Drawing the battle
+
+	pGUI->DrawBattle(BEnemiesForDraw, EnemyCount);
+
+	Point p;
+	pGUI->GetPointClicked(p);
+	for (int TimeStep = 1; TimeStep <= 30; TimeStep++)
+	{
+		//move the old 
+		ActiveList.MoveAll();
+		//check the top of the inactive Queue if it's time dequeue and add to the enemies container.
+		Enemy * TestEnemy; 
+		Enemy * NewEnemy;
+		while (InactiveList.peekFront(TestEnemy)  && TestEnemy->getATime()<=TimeStep)
+		{
+			InactiveList.dequeue(NewEnemy);//deQ the enemy
+			ActiveList.InsertBeg(NewEnemy);
+			EnemyCount++;
+			//add to the cointaner array/linkedList
+			//peekFront again 
+		}
+		BCastle.AllAtack(ActiveList);
+		pGUI->PrintMessage(""); // to clear.
+		BCastle.DispStats(pGUI);
+
+		//fill the BEnemiesForDraw from the ActiveList LL.
+		ActiveList.ArrayOfPtrs(BEnemiesForDraw, EnemyCount);
+
+		// Redraw the enemies
+		pGUI->DrawBattle(BEnemiesForDraw, EnemyCount);
+
+		pGUI->GetPointClicked(p);
+	}
+
+	delete pGUI;
+
 }
+
+void Battle::LoadInput()
+{
+	ifstream LoadFile;
+	string name;
+	cout << "Please type file name:\n";
+	cin >> name;
+	LoadFile.open(name);
+	while (!LoadFile) 
+	{
+		cout << "Invalid file please try again\n";
+		cout << "Please type file name:\n";
+		cin >> name;
+		LoadFile.open(name);
+	}
+	
+	double TH; LoadFile >> TH; int N; LoadFile >> N; double TP; LoadFile >> TP;
+	// InitializeTowers()
+	Enemy * NewEnemy;
+	BCastle.InitializeTowers(TH, N, TP);
+	while (1) {
+		int SeqNum;  LoadFile >> SeqNum;
+		if (SeqNum == -1)
+			break;
+		int TYPin; LoadFile >> TYPin;  ENEMY TYP = ENEMY(TYPin - 1); // 1 2 3 to 0 1 2 
+		int ArrivalTime; LoadFile >> ArrivalTime;
+		double EnemyHealth; LoadFile >> EnemyHealth;
+		double EnemyPower;  LoadFile >> EnemyPower;
+		int RLD;  LoadFile >> RLD;
+		char REGin;  LoadFile >> REGin;
+		REGION REG;
+		switch (REGin)
+		{
+		case 'A':
+			REG = A_REG;
+			break;
+		case 'B':
+			REG = B_REG;
+			break;
+		case 'C':
+			REG = C_REG;
+			break;
+		case 'D':
+			REG = D_REG;
+			break;
+		}
+		switch (TYP) {
+		case fighter:
+			NewEnemy = new Fighter(REG, SeqNum, EnemyHealth, ArrivalTime, EnemyPower, RLD);
+			break;
+		case healer:
+			NewEnemy = new Healer(REG, SeqNum, EnemyHealth, ArrivalTime, EnemyPower, RLD);
+			break;
+		case freezer:
+			NewEnemy = new Freezer(REG, SeqNum, EnemyHealth, ArrivalTime, EnemyPower, RLD);
+			break;
+		}
+		InactiveList.enqueue(NewEnemy);
+	}
+	NewEnemy = NULL;
+	delete NewEnemy;
+	return;
+
+	
+}
+
 
 
 //This is just a demo function for project introductory phase
 //It should be removed in phases 1&2
-void Battle::Just_A_Demo()
+/*void Battle::Just_A_Demo()
 {
 	
 	std::cout<<"\nWelcome to Castle Battle:\n";
@@ -116,4 +217,4 @@ void Battle::Just_A_Demo()
 	}
 
 	delete pGUI;
-}
+}*/

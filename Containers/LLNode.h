@@ -3,22 +3,23 @@
 #ifndef NULL
 #define NULL 0
 #endif
-#ifndef _NODE
-#define _NODE
+#ifndef _LLNode
+#define _LLNode
+#include "../Enemies/Enemy.h"
 
-//First let's declare a singele node in the list
-class Node
+//First let's declare a singele LLNode in the list
+class LLNode
 {
 private :
-	int item;	// A data item (can be any complex sturcture)
-	Node* next;	// Pointer to next node
+	Enemy* item;	// A data item (can be any complex sturcture)
+	LLNode* next;	// Pointer to next LLNode
 public :
-	Node();
-	Node( int newItem);
-	void setItem(int  newItem);
-	void setNext(Node* nextNodePtr);
-	int getItem() const ;
-	Node* getNext() const ;
-}; // end Node
+	LLNode();
+	LLNode(Enemy* newItem);
+	void setItem(Enemy*  newItem);
+	void setNext(LLNode* nextNodePtr);
+	Enemy* getItem() const ;
+	LLNode* getNext() const ;
+}; // end LLNode
 
 #endif	
